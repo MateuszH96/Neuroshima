@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Distressed&display=swap');
+*{
+    margin: 0px;
+}
+body{
+    background-image: url("./images/background.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+#nav-links{
+    display: flex;
+    text-align: center;
+    flex-direction: row;
+    justify-content: flex-end;
+    background-color: rgba(0,0,0,0.3);
+    top: 0px;
+    position: sticky;
+    z-index: 1;
+}
+.main-link {
+    text-decoration: none;
+    font-size: 25px;
+    color: rgb(212, 214, 173);
+    padding:  10px 20px;
+    border-bottom: 2px solid transparent;
+    transition-duration: 0.5s;
+}
+
+.main-link:hover{
+    border-bottom: 2px solid rgb(212, 214, 173);
+    transition-duration: 0.5s;
+}
+#tricks{
+    margin: 10px 0px;
+    border:3px outset black; 
+}
+.container{
+    color: wheat;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.table{
+    background-color: rgba(0,0,0,0.3);
+    width: 500px;
+    text-align: center;
+    border-radius: 10px;
+    border: 2px solid black;
+    margin: 15px;
+    padding-bottom: 10px;
+    object-fit: cover;
+    margin: 40px 50px;
+    position: relative;
+    padding-top: 45px;
+    padding-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.package{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    margin-top: 10px;
+    position: relative;
+}
+.ratio-group{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    &:focus-within{
+        .ratio-input{
+            border-bottom: 2px solid ;
+            color: red;
+            transform: scale(1.2);
+            transition-duration: 0.5s;
+        }
+        .ratio-label{
+            color: red;
+            transform: scale(1.2);
+            transition-duration: 0.5s;
+        }
+    }
+}
+.ratio-label{
+    font-size: 25px;
+}
+h1{
+    position: absolute;
+    top: 0;
+    margin: 10px auto;
+    width: 100%;
+    text-align: center;
+    font-family: "Rubik Distressed", system-ui;
+    font-size: 35px;
+}
+h3{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    text-align: center;
+}
+.ratio-input{
+    background: none;
+    border: none;
+    border-bottom: 2px solid wheat;
+    color: wheat;
+    font-size: 25px;
+    text-align: center;
+    width: 300px;
+    margin-bottom: 10px;
+    outline: none;
+}
+
+.skill-group{
+    margin-top: 25px;
+    width: 150px;
+    height: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    &:focus-within{
+        .skill-input{
+            border-bottom: 2px solid red;
+            color: red;
+            transform: scale(1.2);
+            transition-duration: 0.5s;
+        }
+        .skill-label{
+            color: red;
+            transform: scale(1.2);
+            transition-duration: 0.5s;
+        }
+    }
+}
+.skill-label{
+    font-size: 15px;
+    height: 50%;
+}
+.skill-input{
+    height: 50%;
+    background: none;
+    border: none;
+    border-bottom: 2px solid wheat;
+    color: wheat;
+    font-size: 25px;
+    text-align: center;
+    width: 75%;
+    outline: none;
+    
+
+}
+.licence{
+    color: black;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+@media screen and (max-width:600px) {
+    #nav-links{
+        flex-direction: column;
+        position:static;
+    }
+}
