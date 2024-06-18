@@ -32,7 +32,7 @@ body{
     border-bottom: 2px solid rgb(212, 214, 173);
     transition-duration: 0.5s;
 }
-#tricks{
+#skill-value-inputs{
     margin: 10px 0px;
     border:3px outset black; 
 }
@@ -46,16 +46,14 @@ body{
 .table{
     background-color: rgba(0,0,0,0.3);
     width: 500px;
-    text-align: center;
     border-radius: 10px;
     border: 2px solid black;
     margin: 15px;
-    padding-bottom: 10px;
     object-fit: cover;
     margin: 40px 50px;
-    position: relative;
     padding-top: 45px;
     padding-bottom: 15px;
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -65,13 +63,22 @@ body{
     flex-wrap: wrap;
     justify-content: center;
     text-align: center;
-    margin-top: 10px;
     position: relative;
+}
+.ratio-package{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    height: 100%;
+    padding-top: 30px;
 }
 .ratio-group{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    height: 80px;
     &:focus-within{
         .ratio-input{
             border-bottom: 2px solid ;
@@ -134,7 +141,20 @@ h3{
         .skill-label{
             color: red;
             transform: scale(1.2);
-            transition-duration: 0.5s;
+            transition-duration: 0.7s;
+        }
+    }
+    &:hover{
+        .skill-input{
+            border-bottom: 2px solid red;
+            color: red;
+            transform: scale(1.2);
+            transition-duration: 0.7s;
+        }
+        .skill-label{
+            color: red;
+            transform: scale(1.2);
+            transition-duration: 0.7s;
         }
     }
 }
@@ -144,19 +164,22 @@ h3{
 }
 .skill-input{
     height: 50%;
+    width: 45%;
+    color: wheat;
     background: none;
     border: none;
     border-bottom: 2px solid wheat;
-    color: wheat;
-    font-size: 25px;
     text-align: center;
-    width: 75%;
     outline: none;
+    font-size: 25px;
     
 
 }
 .licence{
-    color: black;
+    text-align: center;
+}
+.licence-link{
+    color: white;
     font-size: 12px;
     text-decoration: none;
 }
