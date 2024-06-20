@@ -188,6 +188,7 @@ body{
     align-items: center;
 }
 .section-title-text{
+    text-align: center;
     color: wheat;
     font-family: 'Custom-Postmaster-Font';
     margin: 0px 25px;
