@@ -2,7 +2,39 @@
 *{
     margin: 0px;
 }
+@font-face {
+    font-family: 'Custom-Machine-Font';
+    src: url('./fonts/maszyna.TTF');
+}
+@font-face {
+    font-family: 'Custom-Calm-Font';
+    src: url('./fonts/spokojny.TTF');
+}
+@font-face {
+    font-family: 'Custom-Postmaster-Font';
+    src: url('./fonts/postmaster.TTF');
+}
+h2,h3,input, .ratio-label, .trick-text{
+    font-family: 'Custom-Machine-Font';
+}
+h1{
+    position: absolute;
+    top: 0;
+    margin: 10px auto;
+    width: 100%;
+    text-align: center;
+    font-family: "Rubik Distressed", system-ui;
+    font-size: 35px;
+}
+h3{
+    position: relative;
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0 0 0;
+}
 body{
+    font-family: 'Custom-Calm-Font';
     background-image: url("./images/background.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -34,7 +66,6 @@ body{
 }
 #skill-value-inputs{
     margin: 10px 0px;
-    border:3px outset black; 
 }
 .container{
     color: wheat;
@@ -46,6 +77,7 @@ body{
 .table{
     background-color: rgba(0,0,0,0.3);
     width: 500px;
+    min-height: 300px;
     border-radius: 10px;
     border: 2px solid black;
     margin: 15px;
@@ -56,9 +88,10 @@ body{
     position: relative;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
+    align-items: center;
 }
-.package{
+.package, .ratio-package{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -66,28 +99,24 @@ body{
     position: relative;
 }
 .ratio-package{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    text-align: center;
-    position: relative;
     height: 100%;
     padding-top: 30px;
+    margin: 10px auto;
 }
 .ratio-group{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     height: 80px;
-    &:focus-within{
+    &:focus-within, &:hover{
         .ratio-input{
-            border-bottom: 2px solid ;
-            color: red;
+            border-bottom: 3px solid wheat;
+            font-weight: bold;
             transform: scale(1.2);
             transition-duration: 0.5s;
         }
         .ratio-label{
-            color: red;
+            font-weight: bold;
             transform: scale(1.2);
             transition-duration: 0.5s;
         }
@@ -95,21 +124,6 @@ body{
 }
 .ratio-label{
     font-size: 25px;
-}
-h1{
-    position: absolute;
-    top: 0;
-    margin: 10px auto;
-    width: 100%;
-    text-align: center;
-    font-family: "Rubik Distressed", system-ui;
-    font-size: 35px;
-}
-h3{
-    position: absolute;
-    top: 0;
-    width: 100%;
-    text-align: center;
 }
 .ratio-input{
     background: none;
@@ -124,41 +138,32 @@ h3{
 }
 
 .skill-group{
-    margin-top: 25px;
+    margin-top: 30px;
     width: 150px;
     height: 80px;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    &:focus-within{
+    font-family: 'Custom-Machine-Font';
+    &:focus-within, &:hover{
         .skill-input{
-            border-bottom: 2px solid red;
-            color: red;
+            border-bottom: 2px solid wheat;
+            font-weight: bold;
             transform: scale(1.2);
             transition-duration: 0.5s;
         }
         .skill-label{
-            color: red;
+            font-weight: bold;
             transform: scale(1.2);
             transition-duration: 0.7s;
         }
     }
-    &:hover{
-        .skill-input{
-            border-bottom: 2px solid red;
-            color: red;
-            transform: scale(1.2);
-            transition-duration: 0.7s;
-        }
-        .skill-label{
-            color: red;
-            transform: scale(1.2);
-            transition-duration: 0.7s;
-        }
     }
-}
 .skill-label{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 15px;
     height: 50%;
 }
@@ -173,20 +178,93 @@ h3{
     outline: none;
     font-size: 25px;
     
-
 }
-.licence{
+/*Hr line section*/
+.section-title{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.section-title-text{
+    color: wheat;
+    font-family: 'Custom-Postmaster-Font';
+    margin: 0px 25px;
+    font-size: 40px;
+}
+.left-hr,.right-hr{
+    height: 2px;
+    flex-grow: 1;
+    background-color: wheat;
+    border: none;
+}
+.left-hr{
+    background: linear-gradient(to left, wheat, transparent);
+}
+.right-hr{
+    background: linear-gradient(to right, wheat, transparent);
+}
+/* Section trick list*/
+
+.table-skill-describe{
+    background-color: rgba(0,0,0,0.3);
+    width: 500px;
+    border-radius: 10px;
+    border: 2px solid black;
+    margin: 15px;
+    object-fit: cover;
+    margin: 40px 50px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.trick-name{
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top: 0px;
+    font-size: 25px;
+}
+.requirements{
+    width: 100%;
+}
+.requirements-list{
+    list-style-type: none;
+    width: 100%;
+    padding:0;
+    text-align: center;
+    letter-spacing: 1px;
+    font-size: 18px;
+}
+.requirements-element{
+    margin: 5px 0px;
+}
+.requirements-element-value{
+    font-weight: bold;
+}
+.describe, .effect{
+    text-align: center;
+    font-size: 18px;
+}
+/*License*/
+.license{
     text-align: center;
 }
-.licence-link{
+.license-link{
     color: white;
     font-size: 12px;
     text-decoration: none;
 }
-
 @media screen and (max-width:600px) {
     #nav-links{
         flex-direction: column;
         position:static;
+    }
+    .table{
+        margin: 30px 0px;
+        width: 100%;
     }
 }
