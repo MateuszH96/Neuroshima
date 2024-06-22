@@ -1,0 +1,26 @@
+.section-title{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.section-title-text{
+    text-align: center;
+    color: wheat;
+    font-family: 'Custom-Postmaster-Font';
+    margin: 0px 25px;
+    font-size: 40px;
+}
+.left-hr,.right-hr{
+    height: 2px;
+    flex-grow: 1;
+    background-color: wheat;
+    border: none;
+}
+.left-hr{
+    background: linear-gradient(to left, wheat, transparent);
+}
+.right-hr{
+    background: linear-gradient(to right, wheat, transparent);
+}

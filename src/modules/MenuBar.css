@@ -1,0 +1,25 @@
+*{
+  margin: 0px;
+}
+#nav-links{
+  display: flex;
+  text-align: center;
+  flex-direction: row;
+  justify-content: flex-end;
+  background-color: rgba(0,0,0,0.3);
+  top: 0px;
+  position: sticky;
+  z-index: 1;
+}
+.main-link {
+  text-decoration: none;
+  font-size: 25px;
+  color: rgb(212, 214, 173);
+  padding:  10px 20px;
+  border-bottom: 2px solid transparent;
+  transition-duration: 0.5s;
+}
+.main-link:hover{
+  border-bottom: 2px solid rgb(212, 214, 173);
+  transition-duration: 0.5s;
+}

@@ -1,0 +1,40 @@
+body{
+    font-family: 'Custom-Calm-Font';
+    background-image: url("images/background.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+@font-face {
+    font-family: 'Custom-Machine-Font';
+    src: url('fonts/maszyna.TTF');
+}
+@font-face {
+    font-family: 'Custom-Calm-Font';
+    src: url('fonts/spokojny.TTF');
+}
+@font-face {
+    font-family: 'Custom-Postmaster-Font';
+    src: url('fonts/postmaster.TTF');
+}
+.main-link{
+    font-family: 'Custom-Calm-Font';
+}
+h2{
+    font-family: 'Custom-Postmaster-Font';
+    color: wheat;
+}
+h1 {
+    color: wheat
+}
+@media screen and (max-width:600px) {
+    #nav-links{
+        flex-direction: column;
+        position:static;
+    }
+    .table{
+        margin: 30px 0px;
+        width: 100%;
+    }
+}
