@@ -6,7 +6,7 @@
   text-align: center;
   flex-direction: row;
   justify-content: flex-end;
-  background-color: rgba(0,0,0,0.3);
+  background-color: rgba(0,0,0,0.45);
   top: 0px;
   position: sticky;
   z-index: 1;

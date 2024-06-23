@@ -1,0 +1,231 @@
+/*Title section style*/
+.section-title{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.section-title-text{
+    text-align: center;
+    color: wheat;
+    font-family: 'Custom-Postmaster-Font';
+    margin: 0px 25px;
+    font-size: 40px;
+}
+.left-hr,.right-hr{
+    height: 2px;
+    flex-grow: 1;
+    background-color: wheat;
+    border: none;
+}
+.left-hr{
+    background: linear-gradient(to left, wheat, transparent);
+}
+.right-hr{
+    background: linear-gradient(to right, wheat, transparent);
+}
+/*Container style*/
+
+.container{
+    color: wheat;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+/*Ratio container style*/
+@font-face {
+    font-family: 'Custom-Machine-Font';
+    src: url('fonts/maszyna.TTF');
+}
+.table{
+    background-color: rgb(0, 0, 0, 0.45);
+    width: 500px;
+    min-height: 300px;
+    border-radius: 10px;
+    border: 2px solid black;
+    object-fit: cover;
+    margin: 40px 50px;
+    padding-top: 45px;
+    padding-bottom: 15px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.table-title{
+    font-size: 45px;
+    width: 100%;
+    text-align: center;
+}
+.ratio-group{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 80px;
+    &:focus-within, &:hover{
+        .ratio-input{
+            border-bottom: 3px solid wheat;
+            font-weight: bold;
+            transform: scale(1.2);
+            transition-duration: 0.5s;
+        }
+        .ratio-label{
+            font-weight: bold;
+            transform: scale(1.2);
+            transition-duration: 0.5s;
+        }
+    }
+}
+.ratio-label{
+    font-family: 'Custom-Machine-Font';
+    font-size: 25px;
+    color: wheat;
+}
+.ratio-input{
+    background: none;
+    border: none;
+    border-bottom: 2px solid wheat;
+    color: wheat;
+    font-size: 25px;
+    text-align: center;
+    width: 300px;
+    margin-bottom: 10px;
+    outline: none;
+    font-family: 'Custom-Machine-Font';
+}
+.ratio-package{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    height: 100%;
+    padding-top: 30px;
+}
+/*
+Skill container style
+*/
+.table {
+    background-color: rgba(0, 0, 0, 0.45);
+    width: 500px;
+    border-radius: 10px;
+    border: 2px solid black;
+    margin: 40px 50px;
+    padding-top: 45px;
+    padding-bottom: 15px;
+    flex-direction: column;
+    justify-content:flex-start;
+}
+
+.table-title {
+    font-size: 45px;
+    width: 100%;
+    text-align: center;
+}
+.skill-package{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+}
+h3{
+    width: 100%;
+    text-align: center;
+    padding: 10px 0 0 0;
+}
+.skill-group {
+    margin-top: 30px;
+    width: 150px;
+    height: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    font-family: 'Custom-Machine-Font';
+
+    &:focus-within,
+    &:hover {
+        .skill-input {
+            border-bottom: 2px solid wheat;
+            font-weight: bold;
+            transform: scale(1.2);
+            transition-duration: 0.5s;
+        }
+
+        .skill-label {
+            font-weight: bold;
+            transform: scale(1.2);
+            transition-duration: 0.7s;
+        }
+    }
+}
+
+.skill-label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    height: 50%;
+}
+
+.skill-input {
+    height: 50%;
+    width: 45%;
+    color: wheat;
+    background: none;
+    border: none;
+    border-bottom: 2px solid wheat;
+    text-align: center;
+    outline: none;
+    font-size: 25px;
+    font-family: 'Custom-Machine-Font';
+
+}
+/*Tricks container style*/
+.table-skill-describe{
+    background-color: rgba(0,0,0,0.45);
+    width: 500px;
+    border-radius: 10px;
+    border: 2px solid black;
+    margin: 15px;
+    object-fit: cover;
+    margin: 40px 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.trick-name{
+    width: 100%;
+    text-align: center;
+    top: 0px;
+    font-size: 30px;
+    padding: 0 0 25px 0;
+}
+.requirements{
+    width: 100%;
+    padding: 0 0 25px 0;
+}
+.requirements-list{
+    list-style-type: none;
+    width: 100%;
+    padding:0;
+    text-align: center;
+    letter-spacing: 1px;
+    font-size: 18px;
+}
+.requirements-element{
+    margin: 5px 0px;
+}
+.requirements-element-value{
+    font-weight: bold;
+}
+.describe, .effect{
+    text-align: center;
+    font-size: 18px;
+    padding-bottom: 25px;
+    font-family: 'Custom-Machine-Font';
+}

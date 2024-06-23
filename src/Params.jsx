@@ -29,5 +29,4 @@ const skills = {
     "Jeździectwo": ["Jazda konna", "Powożenie", "Ujeżdżanie"]
   }
 };
-
 export default skills;
