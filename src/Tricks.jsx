@@ -23,7 +23,6 @@ class TricksElements extends Component {
     Object.keys(or).map((content, index) =>
       elements.push(content + ": " + or[content])
     );
-    console.log();
     return elements.join(" lub ");
   };
   requirementsView(view) {
