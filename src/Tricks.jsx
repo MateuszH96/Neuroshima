@@ -1,19 +1,13 @@
 import React, { Component, Fragment } from "react";
 import "./Tricks.css";
-import skills from "./Params";
-import { hero } from "./hero";
+import skills from "./data/Params";
+import { hero } from "./data/hero";
+import { tricks } from "./data/tricks";
+import getListOfTricks from "./data/listOfTrick";
 const changeValueHero = (name, val) => {
   hero[name] = parseInt(val);
 };
-class tmp {
-  static skillList = [];
-  static addSkill(newSkill) {
-    this.skillList.push(newSkill);
-  }
-  static resetSkill() {
-    this.skillList = [];
-  }
-}
+
 class TricksElements extends Component {
   constructor(props) {
     super(props);
@@ -29,7 +23,9 @@ class TricksElements extends Component {
     return (
       <Fragment>
         {view.map((content, index) => (
-          <li className="requirements-element" key={index}>{content}</li>
+          <li className="requirements-element" key={index}>
+            {content}
+          </li>
         ))}
       </Fragment>
     );
@@ -83,45 +79,33 @@ class TricksList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      skillList: [
-        {
-          name: "3 2 1 Bum",
-          or: null,
-          and: { Mechanika: 3, "Materiały wybuchowe": 3 },
-        },
-        {
-          name: "Aramis",
-          or: null,
-          and: { Zręczność: 14, "Broń ręczna": 5 },
-        },
-        {
-          name: "Asekuracja",
-          or: null,
-          and: { Wspinaczka: 2 },
-        },
-        {
-          name: "Aspirina i Tik-Taki",
-          or: null,
-          and: { "Leczenie chorób": 4, Blef: 3 },
-        },
-        {
-          name: "Czterej pancerni",
-          or: { "Wozy bojowe": 3, "Maszyny ciężkie": 3 },
-          and: { "Opieka nad zwierzętami": 2 },
-        },
-      ],
+      skillList: [],
     };
   }
-  getSkillList(hero) {
-    //TODO: add finding all skills for player
+  getSkillList(player,allTricks) {
+    return getListOfTricks(player,allTricks);
+  }
+  changeSkillList = (newSkill) => {
+    this.setState({
+      skillList: newSkill,
+    });
+  };
+  clickBtn = () =>{
+    const skillToShow = this.getSkillList(hero,tricks);
+    this.changeSkillList(skillToShow);
   }
   render() {
     return (
-      <div className="container">
-        {this.state.skillList.map((category, index) => (
-          <TricksElements key={index} elements={category} />
-        ))}
-      </div>
+      <Fragment>
+        <div className="searchSection">
+          <button className="searchBtn" onClick={this.clickBtn}>{"Szukaj"}</button>
+        </div>
+        <div className="container">
+          {this.state.skillList.map((category, index) => (
+            <TricksElements key={index} elements={category} />
+          ))}
+        </div>
+      </Fragment>
     );
   }
 }

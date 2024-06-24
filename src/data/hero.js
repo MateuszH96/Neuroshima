@@ -34,7 +34,7 @@ export const hero={
 "Czujność":0,
 
 "Skradanie-się":0,
-"Ukrywanie-się":1,
+"Ukrywanie-się":0,
 "Maskowanie":0,
 
 "Łowiectwo":0,

@@ -1,4 +1,4 @@
-import { Component } from "react";
+import React, { Component } from "react";
 import "./MenuBar.css";
 
 class MenuBar extends Component {
@@ -10,12 +10,6 @@ class MenuBar extends Component {
         </a>
         <a className="main-link" href="#tricks-list">
           Sztuczki
-        </a>
-        <a className="main-link" href="#">
-          Empty2
-        </a>
-        <a className="main-link" href="#">
-          Empty3
         </a>
       </nav>
     );

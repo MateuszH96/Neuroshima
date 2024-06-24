@@ -34,10 +34,6 @@
     justify-content: center;
 }
 /*Ratio container style*/
-@font-face {
-    font-family: 'Custom-Machine-Font';
-    src: url('fonts/maszyna.TTF');
-}
 .table{
     background-color: rgb(0, 0, 0, 0.45);
     width: 500px;
@@ -228,4 +224,25 @@ h3{
     font-size: 18px;
     padding-bottom: 25px;
     font-family: 'Custom-Machine-Font';
+}
+.searchSection{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 5vh 0;
+}
+.searchBtn{
+    border: none;
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-family: 'Custom-Postmaster-Font';
+    font-size: 50px;
+    background-color: rgb(0, 0, 0, 0.45);
+    color: wheat;
+    transition-duration: 0.5s;
+}
+.searchBtn:hover{
+    transform: scale(1.2);
+    transition-duration: 0.5s;
+    cursor: pointer;
 }
