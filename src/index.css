@@ -1,6 +1,6 @@
 body{
     font-family: 'Custom-Calm-Font';
-    background-image: url("images/background.jpg");
+    background-image: url(/images/background.jpg);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
@@ -8,15 +8,15 @@ body{
 }
 @font-face {
     font-family: 'Custom-Machine-Font';
-    src: url('fonts/maszyna.TTF');
+    src: url(/fonts/maszyna.TTF);
 }
 @font-face {
     font-family: 'Custom-Calm-Font';
-    src: url('fonts/spokojny.TTF');
+    src: url(/fonts/spokojny.TTF);
 }
 @font-face {
     font-family: 'Custom-Postmaster-Font';
-    src: url('fonts/postmaster.TTF');
+    src: url(/fonts/postmaster.TTF);
 }
 .main-link{
     font-family: 'Custom-Calm-Font';
