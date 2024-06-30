@@ -27,6 +27,9 @@ const skills = {
   "Budowa": {
     "Sprawność": ["Kondycja", "Pływanie", "Wspinaczka"],
     "Jeździectwo": ["Jazda konna", "Powożenie", "Ujeżdżanie"]
+  },
+  "Inne": {
+    "Pozostałe": ["Sztuki walki","Sterowanie","Nawigacja"]
   }
 };
 export default skills;

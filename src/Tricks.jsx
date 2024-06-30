@@ -1,10 +1,12 @@
-import React, { Component, Fragment } from "react";
+import React, { Component, Fragment, createRef } from 'react';
 import "./Tricks.css";
 import skills from "./data/Params";
 import { hero } from "./data/hero";
-import { tricks } from "./data/tricks";
 import getListOfTricks from "./data/listOfTrick";
 const changeValueHero = (name, val) => {
+  if(name === "Zrecznosc"){
+    name = "Zręczność"
+  }
   hero[name] = parseInt(val);
 };
 
@@ -30,10 +32,10 @@ class TricksElements extends Component {
       </Fragment>
     );
   }
-  generateRequirements(or, and) {
+  generateRequirements(or, and, additional) {
     const requirements = [];
     if (!or && !and) {
-      return <li className="requirement-element"> Brak wymagań</li>;
+      return additional === null ?  <li className="requirement-element"> Brak wymagań</li>:<li className="requirement-element">{additional}</li>;
     }
     if (or) {
       requirements.push(this.formatOr(or));
@@ -53,22 +55,24 @@ class TricksElements extends Component {
           <ul className="requirements-list">
             {this.generateRequirements(
               this.props.elements["or"],
-              this.props.elements["and"]
+              this.props.elements["and"],
+              this.props.elements["additional"]
             )}
           </ul>
         </div>
         <div className="describe">
           <p className="trick-text">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
-            feugiat placerat lorem nec suscipit. Curabitur vel augue vitae risus
-            condimentum.
+            {this.props.elements["describe"]}
           </p>
         </div>
         <div className="effect">
           <p className="trick-text">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
-            feugiat placerat lorem nec suscipit. Curabitur vel augue vitae risus
-            condimentum.
+          {this.props.elements["effect"]}
+          </p>
+        </div>
+        <div className="effect">
+          <p className="trick-text">
+          {this.props.elements["book"]}
           </p>
         </div>
       </div>
@@ -81,26 +85,60 @@ class TricksList extends Component {
     this.state = {
       skillList: [],
     };
+    this.tricksListRef = createRef();
   }
-  getSkillList(player,allTricks) {
-    return getListOfTricks(player,allTricks);
+
+  getSkillList(player, allTricks) {
+    return getListOfTricks(player, allTricks);
   }
+
   changeSkillList = (newSkill) => {
     this.setState({
       skillList: newSkill,
+    }, () => {
+      this.scrollToTricksList();
     });
   };
-  clickBtn = () =>{
-    const skillToShow = this.getSkillList(hero,tricks);
-    this.changeSkillList(skillToShow);
-  }
+
+  clickBtn = () => {
+    let cachedTricks = JSON.parse(localStorage.getItem('customTrickData'));
+    if (!cachedTricks) {
+      fetch('http://neurotool.pythonanywhere.com/tricks')
+        .then(response => {
+          if (!response.ok) {
+            cachedTricks = [];
+            throw new Error('Network response was not ok');
+          }
+          return response.json();
+        })
+        .then(data => {
+          localStorage.setItem('customTrickData', JSON.stringify(data));
+          cachedTricks = data;
+          const skillToShow = this.getSkillList(hero, cachedTricks);
+          this.changeSkillList(skillToShow);
+        })
+        .catch(error => {
+          console.error('There has been a problem with your fetch operation:', error);
+        });
+    } else {
+      const skillToShow = this.getSkillList(hero, cachedTricks);
+      this.changeSkillList(skillToShow);
+    }
+  };
+
+  scrollToTricksList = () => {
+    if (this.tricksListRef.current) {
+      this.tricksListRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   render() {
     return (
       <Fragment>
         <div className="searchSection">
           <button className="searchBtn" onClick={this.clickBtn}>{"Szukaj"}</button>
         </div>
-        <div className="container">
+        <div className="container" id="tricks-list" ref={this.tricksListRef}>
           {this.state.skillList.map((category, index) => (
             <TricksElements key={index} elements={category} />
           ))}
@@ -109,6 +147,7 @@ class TricksList extends Component {
     );
   }
 }
+
 class InputBox extends Component {
   state = {
     value: "0",
@@ -189,7 +228,7 @@ class RatioGroup extends Component {
       if (newValue === "") {
         newValue = "0";
       }
-      changeValueHero(this.props.name.replace(" ", "-"), newValue);
+      changeValueHero(this.props.name, newValue);
       this.setState({ value: newValue });
     }
   };
@@ -236,7 +275,7 @@ class Tricks extends Component {
     return (
       <Fragment>
         <TitleSection title="Parametry Postaci" />
-        <div className="container">
+        <div className="container" id="skill-values">
           <RatioTable title="Wspolczynniki" />
           {Object.keys(skills).map((category, index) => (
             <SkillTable key={index} title={category} />
