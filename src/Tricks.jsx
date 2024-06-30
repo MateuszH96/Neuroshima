@@ -103,7 +103,7 @@ class TricksList extends Component {
   clickBtn = () => {
     let cachedTricks = JSON.parse(localStorage.getItem('customTrickData'));
     if (!cachedTricks) {
-      fetch('http://neurotool.pythonanywhere.com/tricks')
+      fetch('https://neurotool.pythonanywhere.com/tricks')
         .then(response => {
           if (!response.ok) {
             cachedTricks = [];
