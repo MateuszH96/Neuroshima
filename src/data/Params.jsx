@@ -19,7 +19,7 @@ const skills = {
     "Kamuflaż": ["Skradanie", "Ukrywanie się", "Maskowanie"],
     "Przetrwanie": ["Łowiectwo", "Znajomość Terenu", "Zdobywanie wody"]
   },
-  "Charyzma": {
+  "Charakter": {
     "Negocjacje": ["Zastraszanie", "Perswazja", "Zdolności przywódcze"],
     "Empatia": ["Postrzeganie emocji", "Blef", "Opieka nad zwierzętami"],
     "Siła woli": ["Odporność na ból", "Niezłomność", "Morale"]
