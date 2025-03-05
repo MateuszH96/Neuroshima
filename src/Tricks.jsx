@@ -163,7 +163,7 @@ class InputBox extends Component {
       if (newValue === "") {
         newValue = "0";
       }
-      changeValueHero(this.props.name.replace(" ", "-"), newValue);
+      changeValueHero(this.props.name, newValue);
       this.setState({ value: newValue });
     }
   };
